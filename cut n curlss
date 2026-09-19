@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Cut & Curls Signature Saloon in Toba Tek Singh — hair, skin, makeup, bridal, nails and beauty services.">
+<title>Cut & Curls Signature Saloon | Toba Tek Singh</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap');
+:root{--ink:#080808;--charcoal:#151515;--gold:#c9a227;--champagne:#e6d3a3;--ivory:#f7f2e8;--line:rgba(201,162,39,.36);--sans:'DM Sans',Arial,sans-serif;--serif:'DM Serif Display',Georgia,serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--sans);line-height:1.5}
+a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}.serif{font-family:var(--serif)}
+.eyebrow{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 23px;border:1px solid var(--gold);background:var(--gold);color:var(--ink);font-size:.73rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;transition:.25s}
+.btn:hover{background:transparent}.btn.ghost{background:transparent;color:var(--ivory);border-color:rgba(247,242,232,.55)}.btn.ghost:hover{background:var(--ivory);color:var(--ink)}
+.nav{position:fixed;z-index:20;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:20px 5vw;color:var(--ivory);transition:.3s}
+.nav.scrolled{background:rgba(8,8,8,.95);padding:12px 5vw}.brand{font-family:var(--serif);font-size:1.38rem;letter-spacing:.05em;line-height:1}.brand small{display:block;font:500 .5rem var(--sans);letter-spacing:.25em;text-align:center;color:var(--champagne);margin-top:5px}
+.nav-links{display:flex;gap:22px;align-items:center;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}.nav-links a{opacity:.9}.nav .btn{min-height:40px;padding:0 15px;font-size:.62rem}.menu{display:none;background:none;border:0;color:white;font-size:1.35rem}
+.hero{min-height:100vh;background:linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.25)),url('images/hero.svg') center/cover;display:flex;align-items:flex-end;padding:0 7vw 12vh;color:var(--ivory)}
+.hero-inner{max-width:760px}.hero h1{font:clamp(3.2rem,7.6vw,7.4rem)/.95 var(--serif);margin:16px 0 22px}.hero p{max-width:500px;font-size:1rem;color:#f7f2e8dd;margin:0 0 30px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.hero .location{margin-top:54px;font-size:.68rem;letter-spacing:.18em;color:var(--champagne)}
+section{padding:108px 7vw}.intro{text-align:center;padding:130px 15vw}.intro h2,.section-title h2{font:clamp(2.6rem,5vw,5rem)/1.03 var(--serif);font-weight:400;margin:16px 0}.intro p{max-width:600px;margin:0 auto;color:#4e4a43}
+.dark{background:var(--ink);color:var(--ivory)}.section-title{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:40px}.section-title p{max-width:420px;margin:0;color:#a7a099}
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}.service{background:var(--charcoal);min-height:295px;padding:26px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:end;color:white}
+.service:before{content:'';position:absolute;inset:0;background:var(--service) center/cover;opacity:.42;transition:.5s}.service:hover:before{transform:scale(1.06);opacity:.58}.service>*{position:relative}
+.service h3{font:2rem var(--serif);margin:6px 0}.service p{font-size:.8rem;color:#e8dfd0;margin:0 0 12px}.mini-link{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--champagne)}
+.hair{display:grid;grid-template-columns:1.05fr .95fr;min-height:620px;padding:0}.hair-image{background:url('images/hair.svg') center/cover}.hair-copy{padding:90px 8vw;display:flex;flex-direction:column;justify-content:center}.hair-copy h2{font:clamp(3rem,5vw,5.3rem)/.98 var(--serif);margin:15px 0}.hair-copy p{color:#4e4a43;max-width:410px}.hair-list{columns:2;list-style:none;padding:0;margin:20px 0 30px;font-size:.82rem}.hair-list li{padding:9px 0;border-bottom:1px solid var(--line)}
+.bridal{background:linear-gradient(90deg,#000b,#0002),url('images/makeup.svg') center/cover;color:var(--ivory);min-height:700px;display:flex;align-items:center}.bridal .content{max-width:570px}.bridal h2{font:clamp(3.3rem,6vw,6rem)/.95 var(--serif);margin:16px 0}.bridal p{color:#f7f2e8d9;max-width:440px}
+.gallery{columns:3;gap:16px}.gallery figure{margin:0 0 16px;break-inside:avoid;position:relative;overflow:hidden;background:#d2c6b5}.gallery img{width:100%;display:block;transition:.4s}.gallery figure:hover img{transform:scale(1.04)}.gallery figcaption{position:absolute;bottom:0;left:0;right:0;padding:23px 16px 12px;background:linear-gradient(transparent,#000b);color:white;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:54px}.why h2{font:clamp(3rem,5vw,5rem)/.98 var(--serif);margin:13px 0}.reasons{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}.reason{padding:27px 20px;border-bottom:1px solid var(--line)}.reason:nth-child(odd){border-right:1px solid var(--line)}.reason h3{font-size:.73rem;letter-spacing:.14em;color:var(--champagne);margin:0 0 8px}.reason p{font-size:.83rem;margin:0;color:#d6cec3}
+.faq-wrap{max-width:800px;margin:auto}.faq{border-top:1px solid #cfc2ae}.faq:last-child{border-bottom:1px solid #cfc2ae}.faq summary{padding:20px 32px 20px 0;cursor:pointer;list-style:none;font:1.17rem var(--serif);position:relative}.faq summary:after{content:'+';position:absolute;right:5px;color:var(--gold);font:1.4rem var(--sans)}.faq[open] summary:after{content:'−'}.faq p{max-width:620px;margin:0 0 20px;color:#5b564e;font-size:.9rem}
+.location-grid{display:grid;grid-template-columns:1fr 1.2fr;background:var(--charcoal);color:var(--ivory)}.location-info{padding:65px}.location-info h2{font:3.5rem/1 var(--serif);margin:12px 0 28px}.location-info address{font-style:normal;color:#e1d9ce;max-width:280px;margin-bottom:22px}.contact-links{display:flex;gap:12px;flex-wrap:wrap}.map-placeholder{background:linear-gradient(130deg,#2b2925,#111);min-height:410px;display:flex;align-items:center;justify-content:center;text-align:center;padding:30px}.map-placeholder div{border:1px solid var(--line);padding:35px;max-width:310px}.map-placeholder p{color:#c9c0b4;font-size:.85rem}
+.final{text-align:center;background:var(--champagne)}.final h2{font:clamp(3rem,6vw,6rem)/.95 var(--serif);margin:16px 0}.final p{color:#4b4235}.final .btn{margin:16px 4px 0}
+.footer{padding:65px 7vw 100px;background:#050505;color:#e7dfd4;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}.footer .brand{font-size:1.8rem}.footer p,.footer a{font-size:.8rem;color:#afa79d}.footer h3{font-size:.65rem;letter-spacing:.16em;color:var(--champagne);text-transform:uppercase}.footer ul{list-style:none;padding:0;line-height:2}
+.mobile-actions{display:none}
+.modal{border:0;padding:0;max-width:640px;width:calc(100% - 32px);background:var(--ivory);box-shadow:0 22px 70px #0009}.modal::backdrop{background:#000b}.booking{padding:35px}.booking h2{font:2.2rem var(--serif);margin:6px 0}.close{float:right;background:none;border:0;font-size:1.5rem}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:grid;gap:5px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}.field.full{grid-column:1/-1}.field input,.field select,.field textarea{font:inherit;letter-spacing:0;text-transform:none;padding:12px;border:1px solid #c9bcaa;background:#fffdf9}.field textarea{min-height:85px}.form-actions{display:flex;justify-content:flex-end;margin-top:25px}.notice{background:#ece2d0;padding:13px;font-size:.82rem}
+@media(max-width:800px){.nav{padding:16px 5vw}.nav-links{display:none}.nav-links.mobile-open{display:flex;position:absolute;top:100%;left:0;right:0;padding:20px 7vw 28px;background:#090909;flex-direction:column;align-items:stretch;gap:20px}.menu{display:block}.hero{padding:0 7vw 15vh}.hero h1{font-size:3.75rem}section{padding:75px 6vw}.intro{padding:90px 8vw}.section-title{display:block}.section-title h2{margin-bottom:14px}.services{grid-template-columns:1fr 1fr}.service{min-height:220px}.hair{grid-template-columns:1fr}.hair-image{min-height:420px}.hair-copy{padding:65px 7vw}.bridal{min-height:630px}.gallery{columns:2;gap:9px}.gallery figure{margin-bottom:9px}.why{grid-template-columns:1fr;gap:16px}.location-grid{grid-template-columns:1fr}.location-info{padding:45px 7vw}.map-placeholder{min-height:300px}.footer{grid-template-columns:1fr 1fr}.footer>div:first-child{grid-column:1/-1}.mobile-actions{display:grid;grid-template-columns:1fr 1fr 1fr;position:fixed;z-index:18;bottom:0;left:0;right:0;background:#0c0c0c;border-top:1px solid #4a3c1b}.mobile-actions a,.mobile-actions button{border:0;background:none;color:var(--ivory);padding:15px 3px;font-size:.58rem;letter-spacing:.11em;text-transform:uppercase;text-align:center}.mobile-actions button{color:var(--champagne)}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}}
+</style>
+</head>
+<body>
+<header class="nav" id="nav">
+<a href="#home" class="brand">CUT &amp; CURLS<small>SIGNATURE SALOON</small></a>
+<nav class="nav-links">
+<a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#bridal">Bridal</a><a href="#gallery">Gallery</a><a href="#testimonials">Testimonials</a><a href="#contact">Contact</a>
+<button class="btn" onclick="openBooking()">Book appointment</button>
+</nav>
+<button class="menu" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')">☰</button>
+</header>
+
+<main>
+<section class="hero" id="home"><div class="hero-inner">
+<div class="eyebrow">Cut &amp; Curls Signature Saloon</div>
+<h1>Beauty, Confidence<br>&amp; Signature Style</h1>
+<p>Discover refined beauty, hair, skin, nail and makeover services at Cut &amp; Curls Signature Saloon in Toba Tek Singh.</p>
+<div class="hero-actions"><button class="btn" onclick="openBooking()">Book an appointment</button><a class="btn ghost" href="#services">Explore services</a><a class="btn ghost" href="https://wa.me/923346267937" target="_blank">WhatsApp us</a></div>
+<div class="location">TOBA TEK SINGH • PUNJAB</div>
+</div></section>
+
+<section class="intro" id="about"><div class="eyebrow">The signature experience</div><h2>Where Beauty Becomes<br>Your Signature.</h2><p>At Cut &amp; Curls Signature Saloon, every detail is designed around your confidence, style and individual beauty.</p></section>
+
+<section class="dark" id="services"><div class="section-title"><div><div class="eyebrow">Our expertise</div><h2>Signature Services</h2></div><p>Explore our beauty services and open any service for more details.</p></div><div class="services" id="serviceGrid"></div></section>
+
+<section class="hair"><div class="hair-image"></div><div class="hair-copy"><div class="eyebrow">A tailored approach</div><h2>The Hair Edit</h2><p>Explore hair services designed around your preferred look and individual needs.</p><ul class="hair-list"><li>Hair Cutting</li><li>Hair Treatment</li><li>Hair Colouring</li><li>Keratin</li><li>Rebonding</li><li>Hair Extensions</li></ul><a class="btn" href="#services">Explore hair services</a></div></section>
+
+<section class="bridal" id="bridal"><div class="content"><div class="eyebrow">The bridal edit</div><h2>Your Bridal Beauty, Perfected.</h2><p>Bring your wedding vision together with bridal makeup, hair styling, skin preparation, nails and complete bridal makeover services.</p><div class="hero-actions"><button class="btn" onclick="openBooking('Bridal Makeup')">Bridal consultation</button><a class="btn ghost" href="#gallery">View bridal gallery</a></div></div></section>
+
+<section id="gallery"><div class="section-title"><div><div class="eyebrow">Our work</div><h2>Transformation Gallery</h2></div><p>Visual inspiration from across hair, makeup, bridal, nails and beauty.</p></div>
+<div class="gallery">
+<figure><img loading="lazy" alt="Elegant bridal makeup" src="images/bridal-gallery.svg"><figcaption>Bridal</figcaption></figure>
+<figure><img loading="lazy" alt="Salon hair styling" src="images/hair-gallery.svg"><figcaption>Hair</figcaption></figure>
+<figure><img loading="lazy" alt="Manicure and nail art" src="images/nails.svg"><figcaption>Nails</figcaption></figure>
+<figure><img loading="lazy" alt="Beauty makeup" src="images/makeup-gallery.svg"><figcaption>Makeup</figcaption></figure>
+<figure><img loading="lazy" alt="Beauty products" src="images/beauty.svg"><figcaption>Beauty</figcaption></figure>
+</div></section>
+
+<section class="dark"><div class="why"><div><div class="eyebrow">Why Cut &amp; Curls</div><h2>Made for<br>your moment.</h2></div><div class="reasons">
+<div class="reason"><h3>Personalized Beauty</h3><p>Professional service tailored to individual preferences.</p></div>
+<div class="reason"><h3>Signature Style</h3><p>Beauty looks designed around your style.</p></div>
+<div class="reason"><h3>Head to Toe</h3><p>Hair, skin, makeup, nails and more.</p></div>
+<div class="reason"><h3>Local &amp; Convenient</h3><p>Serving clients in Toba Tek Singh.</p></div>
+</div></div></section>
+
+<section id="testimonials"><div class="section-title"><div><div class="eyebrow">Client voices</div><h2>Testimonials</h2></div></div><div class="notice">Testimonials will appear here when genuine client reviews are added by the salon.</div></section>
+
+<section><div class="section-title"><div><div class="eyebrow">Helpful details</div><h2>Frequently Asked Questions</h2></div></div><div class="faq-wrap" id="faqList"></div></section>
+
+<section id="contact" style="padding:0"><div class="location-grid"><div class="location-info"><div class="eyebrow">Visit the salon</div><h2>Find Us</h2><address>Near GPO Basement Clinic Dr Zahid Lodhi,<br>Toba Tek Singh, Punjab, Pakistan, 36050</address><p>0334 6267937</p><div class="contact-links"><a class="btn" href="tel:03346267937">Call now</a><a class="btn" href="https://wa.me/923346267937" target="_blank">WhatsApp</a></div></div><div class="map-placeholder"><div><div class="eyebrow">Directions</div><p>Map and directions can be added once the salon’s official Google Maps link is configured.</p></div></div></div></section>
+
+<section class="final"><div class="eyebrow" style="color:#574415">Your next appointment</div><h2>Ready for Your<br>Signature Look?</h2><p>Book your next beauty appointment with Cut &amp; Curls Signature Saloon.</p><button class="btn" onclick="openBooking()">Book an appointment</button><a class="btn" href="https://wa.me/923346267937" target="_blank">WhatsApp us</a></section>
+</main>
+
+<footer class="footer"><div><a class="brand" href="#home">CUT &amp; CURLS<small>SIGNATURE SALOON</small></a><p>Beauty Salon<br>Near GPO Basement Clinic Dr Zahid Lodhi, Toba Tek Singh, Punjab, Pakistan, 36050</p></div>
+<div><h3>Explore</h3><ul><li><a href="#services">Services</a></li><li><a href="#bridal">Bridal</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact</a></li></ul></div>
+<div><h3>Contact</h3><ul><li><a href="tel:03346267937">0334 6267937</a></li><li><a href="https://wa.me/923346267937">WhatsApp</a></li><li><button class="mini-link" onclick="openBooking()">Book appointment</button></li></ul></div></footer>
+
+<div class="mobile-actions"><a href="tel:03346267937">Call</a><a href="https://wa.me/923346267937">WhatsApp</a><button onclick="openBooking()">Book</button></div>
+
+<dialog class="modal" id="bookingModal"><form class="booking" id="bookingForm" method="dialog">
+<button type="button" class="close" onclick="bookingModal.close()">×</button>
+<div class="eyebrow">Appointment request</div><h2>Reserve your moment.</h2><p>Share your preferred service and time. The salon will confirm availability.</p>
+<div class="form-grid">
+<label class="field full">Service<select id="serviceInput" required></select></label>
+<label class="field">Preferred date<input type="date" id="dateInput" required></label>
+<label class="field">Preferred time<input type="time" required></label>
+<label class="field">Full name<input required autocomplete="name"></label>
+<label class="field">Phone<input type="tel" required autocomplete="tel"></label>
+<label class="field full">Email<input type="email" autocomplete="email"></label>
+<label class="field full">Message<textarea maxlength="500"></textarea></label>
+</div>
+<div class="form-actions"><button class="btn" type="submit">Submit request</button></div>
+</form></dialog>
+
+<script>
+const services=[
+['Hair','Hair Cutting','Precision cuts tailored to your preference.'],
+['Skin','Skin Treatment','Tailored skin-care services.'],
+['Makeup','Makeovers','Makeup services for your occasion.'],
+['Bridal','Bridal Makeup','A complete bridal beauty experience.'],
+['Nails','Manicure','Refined nail care.'],
+['Nails','Pedicure','Essential nail and foot care.'],
+['Nails','Nail Extensions','Extensions and nail art services.'],
+['Lashes','Lash Extensions','Lash extension services.']
+];
+const images={
+'Hair Cutting':'images/hero.svg',
+'Skin Treatment':'images/skin-treatment.svg',
+'Makeovers':'images/makeup.svg',
+'Bridal Makeup':'images/bridal-gallery.svg',
+'Manicure':'images/nails.svg',
+'Pedicure':'images/pedicure.svg',
+'Nail Extensions':'images/nail-extensions.svg',
+'Lash Extensions':'images/lash-extensions.svg'
+};
+const slug=s=>s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
+document.getElementById('serviceGrid').innerHTML=services.map(s=>`<a class="service" href="service.html?service=${encodeURIComponent(slug(s[1]))}" style="--service:url('${images[s[1]]}')"><div class="eyebrow">${s[0]}</div><h3>${s[1]}</h3><p>${s[2]}</p><span class="mini-link">Explore service →</span></a>`).join('');
+
+const faqs=[
+['How do I book an appointment?','Use the booking form, call the salon, or contact the salon on WhatsApp.'],
+['What services do you offer?','Services include hair, skin, makeup, bridal, nails and lashes.'],
+['Do you provide bridal beauty services?','Yes. You can submit a bridal consultation request through the booking form.'],
+['How can I contact the salon?','Call 0334 6267937 or use the WhatsApp button.'],
+['Where is the salon located?','Near GPO Basement Clinic Dr Zahid Lodhi, Toba Tek Singh, Punjab, Pakistan, 36050.']
+];
+document.getElementById('faqList').innerHTML=faqs.map(x=>`<details class="faq"><summary>${x[0]}</summary><p>${x[1]}</p></details>`).join('');
+
+const modal=document.getElementById('bookingModal');
+const select=document.getElementById('serviceInput');
+select.innerHTML='<option value="">Select a service</option>'+services.map(x=>`<option>${x[1]}</option>`).join('');
+document.getElementById('dateInput').min=new Date().toISOString().split('T')[0];
+const requestedService=new URLSearchParams(location.search).get('book');
+if(requestedService){select.value=requestedService;}
+function openBooking(name){if(name)select.value=name;modal.showModal()}
+document.getElementById('bookingForm').addEventListener('submit',e=>{
+e.preventDefault();
+e.target.innerHTML='<div class="eyebrow">Request received</div><h2>Thank you!</h2><p>Your appointment request has been received. Please contact the salon on WhatsApp to confirm availability.</p><div class="hero-actions"><a class="btn" href="https://wa.me/923346267937">WhatsApp the salon</a><a class="btn" href="tel:03346267937">Call the salon</a></div>';
+});
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>30));
+</script>
+</body>
+</html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Service details for Cut & Curls Signature Saloon.">
+<title>Service | Cut & Curls Signature Saloon</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap');
+:root{--black:#080808;--gold:#c9a227;--ivory:#f7f2e8;--line:#c9a22766;--serif:'DM Serif Display',Georgia,serif;--sans:'DM Sans',Arial,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--ivory);color:#151515;font:16px/1.55 var(--sans)}a{color:inherit}
+.nav{padding:20px 7vw;background:var(--black);color:var(--ivory);display:flex;justify-content:space-between;align-items:center}.brand{font-family:var(--serif);font-size:1.35rem;text-decoration:none}.back{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
+.hero{min-height:61vh;color:var(--ivory);display:flex;align-items:end;padding:65px 8vw;background:linear-gradient(90deg,#000c,#0003),var(--image) center/cover}.hero div{max-width:660px}
+.eyebrow{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:#e6d3a3}.hero h1{font:clamp(3.3rem,8vw,6.4rem)/.93 var(--serif);margin:13px 0}.hero p{max-width:650px}
+.content{max-width:1060px;margin:auto;padding:80px 7vw}.grid{display:grid;grid-template-columns:1fr 1fr;gap:65px}.grid p{color:#575047}.rule{border-top:1px solid var(--line);padding-top:25px}
+.btn{display:inline-block;background:var(--gold);border:1px solid var(--gold);padding:14px 20px;text-decoration:none;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase}.btn:hover{background:transparent}
+.related{margin-top:70px;padding-top:35px;border-top:1px solid var(--line)}.related a{margin:0 18px 10px 0;display:inline-block;text-decoration:underline;text-underline-offset:4px}
+.contact{margin-top:55px;padding:28px;background:#151515;color:var(--ivory)}.contact p{color:#d8d0c5}.contact .btn{margin-top:8px}
+@media(max-width:650px){.grid{grid-template-columns:1fr;gap:25px}.content{padding:55px 7vw}.nav{padding:17px 5vw}.hero{min-height:70vh;padding:50px 7vw}.back{font-size:.62rem}}
+</style>
+</head>
+<body>
+<nav class="nav"><a class="brand" href="index.html">CUT &amp; CURLS</a><a class="back" href="index.html#services">← All services</a></nav>
+<main>
+<section class="hero" id="hero"><div><div class="eyebrow" id="category"></div><h1 id="title">Service</h1><p id="intro"></p></div></section>
+<section class="content"><div class="grid"><div><div class="eyebrow">The experience</div><h2>Thoughtfully tailored</h2><p id="detail"></p></div><div class="rule"><h2>What to expect</h2><p id="expect"></p><a class="btn" href="index.html#home" id="book">Book this service</a></div></div>
+<div class="contact"><div class="eyebrow">Contact the salon</div><h2>Ready to book?</h2><p>Call the salon or use WhatsApp to confirm availability.</p><a class="btn" href="tel:03346267937">Call 0334 6267937</a> <a class="btn" href="https://wa.me/923346267937" target="_blank">WhatsApp</a></div>
+<div class="related"><div class="eyebrow">Continue exploring</div><h2>Related services</h2>
+<a href="service.html?service=hair-cutting">Hair Cutting</a><a href="service.html?service=skin-treatment">Skin Treatment</a><a href="service.html?service=makeovers">Makeovers</a><a href="service.html?service=bridal-makeup">Bridal Makeup</a><a href="service.html?service=manicure">Manicure</a><a href="service.html?service=pedicure">Pedicure</a><a href="service.html?service=nail-extensions">Nail Extensions</a><a href="service.html?service=lash-extensions">Lash Extensions</a></div>
+</section>
+</main>
+<script>
+const data={
+'hair-cutting':['Hair','Hair Cutting','Precision cuts tailored to your style, face shape and preferences.','Discuss the finish you have in mind before the appointment.','A consultation-led hair appointment focused on your preferred shape and style.','images/hero.svg'],
+'skin-treatment':['Skin','Skin Treatment','Tailored skin-care services for a considered beauty routine.','Please share your preferences when making your request.','A calm, service-focused appointment with time to discuss your needs.','images/skin-treatment.svg'],
+'makeovers':['Makeup','Makeovers','Makeup services for your occasion and personal style.','Bring inspiration if there is a particular look you would like to discuss.','Your appointment begins with a conversation about the finish and occasion.','images/makeup.svg'],
+'bridal-makeup':['Bridal','Bridal Makeup','A considered beauty service for your bridal preparations.','Use the booking request to begin a bridal consultation.','Discuss your event, preferred look and timing directly with the salon.','images/bridal-gallery.svg'],
+'manicure':['Nails','Manicure','Refined nail care for a polished finish.','Contact the salon for availability and service details.','Share any preferences when requesting your appointment.','images/nails.svg'],
+'pedicure':['Nails','Pedicure','Essential nail and foot care in a salon setting.','Contact the salon for availability and service details.','Share any preferences when requesting your appointment.','images/pedicure.svg'],
+'nail-extensions':['Nails','Nail Extensions','Nail extension services for a defined, polished result.','Contact the salon for availability and service details.','Share any preferences when requesting your appointment.','images/nail-extensions.svg'],
+'lash-extensions':['Lashes','Lash Extensions','Professional lash extension treatment for a refined finish.','Contact the salon for availability and service details.','Share your preferred finish when requesting your appointment.','images/lash-extensions.svg']
+};
+const key=new URLSearchParams(location.search).get('service')||'hair-cutting',d=data[key]||data['hair-cutting'];
+document.title=d[1]+' | Cut & Curls Signature Saloon';
+document.getElementById('category').textContent=d[0];document.getElementById('title').textContent=d[1];document.getElementById('intro').textContent=d[2];document.getElementById('detail').textContent=d[3];document.getElementById('expect').textContent=d[4];document.getElementById('hero').style.setProperty('--image',`url('${d[5]}')`);document.getElementById('book').href='index.html?book='+encodeURIComponent(d[1])+'#home';
+</script>
+</body>
+</html>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1200" viewBox="0 0 1000 1200">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#11100f"/><stop offset="1" stop-color="#3b3022"/></linearGradient>
+<radialGradient id="glow" cx=".75" cy=".35" r=".7"><stop offset="0" stop-color="#c8a66a" stop-opacity=".28"/><stop offset="1" stop-color="#c8a66a" stop-opacity="0"/></radialGradient></defs>
+<rect width="100%" height="100%" fill="url(#bg)"/><rect width="100%" height="100%" fill="url(#glow)"/>
+<circle cx="120" cy="240" r="220" fill="none" stroke="#c9a227" stroke-opacity=".28" stroke-width="2"/>
+<circle cx="120" cy="240" r="170" fill="none" stroke="#c9a227" stroke-opacity=".16"/>
+<g opacity=".92"><circle cx="720" cy="408" r="115" fill="#cda78d"/>
+<path d="M 580 1056 Q 620 636 720 588 Q 840 648 900 1056 Z" fill="#9b6d58"/>
+<path d="M 590 396 Q 680 120 840 312 Q 810 468 730 504 Q 630 504 590 396 Z" fill="#181412"/>
+<path d="M 660 420 Q 700 444 740 420" fill="none" stroke="#6d4b3b" stroke-width="3" stroke-linecap="round"/></g>
+<path d="M 70 948 H 480" stroke="#c9a227" stroke-width="2" opacity=".8"/>
+<text x="70" y="780" fill="#c9a227" font-family="Arial,Helvetica,sans-serif" font-size="26" letter-spacing="5">BEAUTY CARE</text>
+<text x="70" y="852" fill="#f7f2e8" font-family="Georgia,serif" font-size="42">A complete salon experience</text>
+<text x="70" y="1092" fill="#f7f2e8" opacity=".55" font-family="Arial,Helvetica,sans-serif" font-size="15" letter-spacing="3">CUT &amp; CURLS • TOBA TEK SINGH</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1200" viewBox="0 0 1000 1200">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#11100f"/><stop offset="1" stop-color="#3b3022"/></linearGradient>
+<radialGradient id="glow" cx=".75" cy=".35" r=".7"><stop offset="0" stop-color="#e4c9ad" stop-opacity=".28"/><stop offset="1" stop-color="#e4c9ad" stop-opacity="0"/></radialGradient></defs>
+<rect width="100%" height="100%" fill="url(#bg)"/><rect width="100%" height="100%" fill="url(#glow)"/>
+<circle cx="120" cy="240" r="220" fill="none" stroke="#c9a227" stroke-opacity=".28" stroke-width="2"/>
+<circle cx="120" cy="240" r="170" fill="none" stroke="#c9a227" stroke-opacity=".16"/>
+<g opacity=".92"><circle cx="720" cy="408" r="115" fill="#cda78d"/>
+<path d="M 580 1056 Q 620 636 720 588 Q 840 648 900 1056 Z" fill="#9b6d58"/>
+<path d="M 590 396 Q 680 120 840 312 Q 810 468 730 504 Q 630 504 590 396 Z" fill="#181412"/>
+<path d="M 660 420 Q 700 444 740 420" fill="none" stroke="#6d4b3b" stroke-width="3" stroke-linecap="round"/></g>
+<path d="M 70 948 H 480" stroke="#c9a227" stroke-width="2" opacity=".8"/>
+<text x="70" y="780" fill="#c9a227" font-family="Arial,Helvetica,sans-serif" font-size="26" letter-spacing="5">BRIDAL BEAUTY</text>
+<text x="70" y="852" fill="#f7f2e8" font-family="Georgia,serif" font-size="42">Elegant • Timeless • Yours</text>
+<text x="70" y="1092" fill="#f7f2e8" opacity=".55" font-family="Arial,Helvetica,sans-serif" font-size="15" letter-spacing="3">CUT &amp; CURLS • TOBA TEK SINGH</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#11100f"/><stop offset="1" stop-color="#3b3022"/></linearGradient>
+<radialGradient id="glow" cx=".75" cy=".35" r=".7"><stop offset="0" stop-color="#b98b62" stop-opacity=".28"/><stop offset="1" stop-color="#b98b62" stop-opacity="0"/></radialGradient></defs>
+<rect width="100%" height="100%" fill="url(#bg)"/><rect width="100%" height="100%" fill="url(#glow)"/>
+<circle cx="144" cy="180" r="198" fill="none" stroke="#c9a227" stroke-opacity=".28" stroke-width="2"/>
+<circle cx="144" cy="180" r="153" fill="none" stroke="#c9a227" stroke-opacity=".16"/>
+<g opacity=".92"><circle cx="864" cy="306" r="138" fill="#cda78d"/>
+<path d="M 696 792 Q 744 477 864 441 Q 1008 486 1080 792 Z" fill="#9b6d58"/>
+<path d="M 708 297 Q 816 90 1008 234 Q 972 351 876 378 Q 756 378 708 297 Z" fill="#181412"/>
+<path d="M 792 315 Q 840 333 888 315" fill="none" stroke="#6d4b3b" stroke-width="3" stroke-linecap="round"/></g>
+<path d="M 84 711 H 576" stroke="#c9a227" stroke-width="2" opacity=".8"/>
+<text x="84" y="585" fill="#c9a227" font-family="Arial,Helvetica,sans-serif" font-size="23" letter-spacing="5">THE HAIR EDIT</text>
+<text x="84" y="639" fill="#f7f2e8" font-family="Georgia,serif" font-size="37">Cut • Colour • Care</text>
+<text x="84" y="819" fill="#f7f2e8" opacity=".55" font-family="Arial,Helvetica,sans-serif" font-size="13" letter-spacing="3">CUT &amp; CURLS • TOBA TEK SINGH</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1200" viewBox="0 0 1000 1200">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#11100f"/><stop offset="1" stop-color="#3b3022"/></linearGradient>
+<radialGradient id="glow" cx=".75" cy=".35" r=".7"><stop offset="0" stop-color="#b98b62" stop-opacity=".28"/><stop offset="1" stop-color="#b98b62" stop-opacity="0"/></radialGradient></defs>
+<rect width="100%" height="100%" fill="url(#bg)"/><rect width="100%" height="100%" fill="url(#glow)"/>
+<circle cx="120" cy="240" r="220" fill="none" stroke="#c9a227" stroke-opacity=".28" stroke-width="2"/>
+<circle cx="120" cy="240" r="170" fill="none" stroke="#c9a227" stroke-opacity=".16"/>
+<g opacity=".92"><circle cx="720" cy="408" r="115" fill="#cda78d"/>
+<path d="M 580 1056 Q 620 636 720 588 Q 840 648 900 1056 Z" fill="#9b6d58"/>
+<path d="M 590 396 Q 680 120 840 312 Q 810 468 730 504 Q 630 504 590 396 Z" fill="#181412"/>
+<path d="M 660 420 Q 700 444 740 420" fill="none" stroke="#6d4b3b" stroke-width="3" stroke-linecap="round"/></g>
+<path d="M 70 948 H 480" stroke="#c9a227" stroke-width="2" opacity=".8"/>
+<text x="70" y="780" fill="#c9a227" font-family="Arial,Helvetica,sans-serif" font-size="26" letter-spacing="5">HAIR STYLING</text>
+<text x="70" y="852" fill="#f7f2e8" font-family="Georgia,serif" font-size="42">Signature finishes</text>
+<text x="70" y="1092" fill="#f7f2e8" opacity=".55" font-family="Arial,Helvetica,sans-serif" font-size="15" letter-spacing="3">CUT &amp; CURLS • TOBA TEK SINGH</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#11100f"/><stop offset="1" stop-color="#3b3022"/></linearGradient>
+<radialGradient id="glow" cx=".75" cy=".35" r=".7"><stop offset="0" stop-color="#d6b66b" stop-opacity=".28"/><stop offset="1" stop-color="#d6b66b" stop-opacity="0"/></radialGradient></defs>
+<rect width="100%" height="100%" fill="url(#bg)"/><rect width="100%" height="100%" fill="url(#glow)"/>
+<circle cx="192" cy="200" r="220" fill="none" stroke="#c9a227" stroke-opacity=".28" stroke-width="2"/>
+<circle cx="192" cy="200" r="170" fill="none" stroke="#c9a227" stroke-opacity=".16"/>
+<g opacity=".92"><circle cx="1152" cy="340" r="184" fill="#cda78d"/>
+<path d="M 928 880 Q 992 530 1152 490 Q 1344 540 1440 880 Z" fill="#9b6d58"/>
+<path d="M 944 330 Q 1088 100 1344 260 Q 1296 390 1168 420 Q 1008 420 944 330 Z" fill="#181412"/>
+<path d="M 1056 350 Q 1120 370 1184 350" fill="none" stroke="#6d4b3b" stroke-width="3" stroke-linecap="round"/></g>
+<path d="M 112 790 H 768" stroke="#c9a227" stroke-width="2" opacity=".8"/>
+<text x="112" y="650" fill="#c9a227" font-family="Arial,Helvetica,sans-serif" font-size="26" letter-spacing="5">SIGNATURE BEAUTY</text>
+<text x="112" y="710" fill="#f7f2e8" font-family="Georgia,serif" font-size="42">Hair • Makeup • Nails • Skin</text>
+<text x="112" y="910" fill="#f7f2e8" opacity=".55" font-family="Arial,Helvetica,sans-serif" font-size="15" letter-spacing="3">CUT &amp; CURLS • TOBA TEK SINGH</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#11100f"/><stop offset="1" stop-color="#3b3022"/></linearGradient>
+<radialGradient id="glow" cx=".75" cy=".35" r=".7"><stop offset="0" stop-color="#b28b75" stop-opacity=".28"/><stop offset="1" stop-color="#b28b75" stop-opacity="0"/></radialGradient></defs>
+<rect width="100%" height="100%" fill="url(#bg)"/><rect width="100%" height="100%" fill="url(#glow)"/>
+<circle cx="144" cy="180" r="198" fill="none" stroke="#c9a227" stroke-opacity=".28" stroke-width="2"/>
+<circle cx="144" cy="180" r="153" fill="none" stroke="#c9a227" stroke-opacity=".16"/>
+<g opacity=".92"><circle cx="864" cy="306" r="138" fill="#cda78d"/>
+<path d="M 696 792 Q 744 477 864 441 Q 1008 486 1080 792 Z" fill="#9b6d58"/>
+<path d="M 708 297 Q 816 90 1008 234 Q 972 351 876 378 Q 756 378 708 297 Z" fill="#181412"/>
+<path d="M 792 315 Q 840 333 888 315" fill="none" stroke="#6d4b3b" stroke-width="3" stroke-linecap="round"/></g>
+<path d="M 84 711 H 576" stroke="#c9a227" stroke-width="2" opacity=".8"/>
+<text x="84" y="585" fill="#c9a227" font-family="Arial,Helvetica,sans-serif" font-size="23" letter-spacing="5">LASH EXTENSIONS</text>
+<text x="84" y="639" fill="#f7f2e8" font-family="Georgia,serif" font-size="37">Soft • Defined • Elegant</text>
+<text x="84" y="819" fill="#f7f2e8" opacity=".55" font-family="Arial,Helvetica,sans-serif" font-size="13" letter-spacing="3">CUT &amp; CURLS • TOBA TEK SINGH</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#11100f"/><stop offset="1" stop-color="#3b3022"/></linearGradient>
+<radialGradient id="glow" cx=".75" cy=".35" r=".7"><stop offset="0" stop-color="#c88980" stop-opacity=".28"/><stop offset="1" stop-color="#c88980" stop-opacity="0"/></radialGradient></defs>
+<rect width="100%" height="100%" fill="url(#bg)"/><rect width="100%" height="100%" fill="url(#glow)"/>
+<circle cx="144" cy="180" r="198" fill="none" stroke="#c9a227" stroke-opacity=".28" stroke-width="2"/>
+<circle cx="144" cy="180" r="153" fill="none" stroke="#c9a227" stroke-opacity=".16"/>
+<g opacity=".92"><circle cx="864" cy="306" r="138" fill="#cda78d"/>
+<path d="M 696 792 Q 744 477 864 441 Q 1008 486 1080 792 Z" fill="#9b6d58"/>
+<path d="M 708 297 Q 816 90 1008 234 Q 972 351 876 378 Q 756 378 708 297 Z" fill="#181412"/>
+<path d="M 792 315 Q 840 333 888 315" fill="none" stroke="#6d4b3b" stroke-width="3" stroke-linecap="round"/></g>
+<path d="M 84 711 H 576" stroke="#c9a227" stroke-width="2" opacity=".8"/>
+<text x="84" y="585" fill="#c9a227" font-family="Arial,Helvetica,sans-serif" font-size="23" letter-spacing="5">MAKEOVERS</text>
+<text x="84" y="639" fill="#f7f2e8" font-family="Georgia,serif" font-size="37">Your look, refined</text>
+<text x="84" y="819" fill="#f7f2e8" opacity=".55" font-family="Arial,Helvetica,sans-serif" font-size="13" letter-spacing="3">CUT &amp; CURLS • TOBA TEK SINGH</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1200" viewBox="0 0 1000 1200">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#11100f"/><stop offset="1" stop-color="#3b3022"/></linearGradient>
+<radialGradient id="glow" cx=".75" cy=".35" r=".7"><stop offset="0" stop-color="#c88980" stop-opacity=".28"/><stop offset="1" stop-color="#c88980" stop-opacity="0"/></radialGradient></defs>
+<rect width="100%" height="100%" fill="url(#bg)"/><rect width="100%" height="100%" fill="url(#glow)"/>
+<circle cx="120" cy="240" r="220" fill="none" stroke="#c9a227" stroke-opacity=".28" stroke-width="2"/>
+<circle cx="120" cy="240" r="170" fill="none" stroke="#c9a227" stroke-opacity=".16"/>
+<g opacity=".92"><circle cx="720" cy="408" r="115" fill="#cda78d"/>
+<path d="M 580 1056 Q 620 636 720 588 Q 840 648 900 1056 Z" fill="#9b6d58"/>
+<path d="M 590 396 Q 680 120 840 312 Q 810 468 730 504 Q 630 504 590 396 Z" fill="#181412"/>
+<path d="M 660 420 Q 700 444 740 420" fill="none" stroke="#6d4b3b" stroke-width="3" stroke-linecap="round"/></g>
+<path d="M 70 948 H 480" stroke="#c9a227" stroke-width="2" opacity=".8"/>
+<text x="70" y="780" fill="#c9a227" font-family="Arial,Helvetica,sans-serif" font-size="26" letter-spacing="5">MAKEUP</text>
+<text x="70" y="852" fill="#f7f2e8" font-family="Georgia,serif" font-size="42">Soft glam • Bridal</text>
+<text x="70" y="1092" fill="#f7f2e8" opacity=".55" font-family="Arial,Helvetica,sans-serif" font-size="15" letter-spacing="3">CUT &amp; CURLS • TOBA TEK SINGH</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#11100f"/><stop offset="1" stop-color="#3b3022"/></linearGradient>
+<radialGradient id="glow" cx=".75" cy=".35" r=".7"><stop offset="0" stop-color="#d1a1a7" stop-opacity=".28"/><stop offset="1" stop-color="#d1a1a7" stop-opacity="0"/></radialGradient></defs>
+<rect width="100%" height="100%" fill="url(#bg)"/><rect width="100%" height="100%" fill="url(#glow)"/>
+<circle cx="144" cy="180" r="198" fill="none" stroke="#c9a227" stroke-opacity=".28" stroke-width="2"/>
+<circle cx="144" cy="180" r="153" fill="none" stroke="#c9a227" stroke-opacity=".16"/>
+<g opacity=".9"><ellipse cx="876" cy="477" rx="192" ry="252" fill="#d1a1a7" opacity=".85"/>
+<ellipse cx="804" cy="378" rx="66" ry="126" fill="#f7f2e8" opacity=".9"/>
+<ellipse cx="948" cy="378" rx="66" ry="126" fill="#f7f2e8" opacity=".9"/>
+<ellipse cx="876" cy="306" rx="66" ry="126" fill="#f7f2e8" opacity=".9"/>
+<circle cx="876" cy="504" r="144" fill="none" stroke="#c9a227" stroke-width="3"/></g>
+<path d="M 84 711 H 576" stroke="#c9a227" stroke-width="2" opacity=".8"/>
+<text x="84" y="585" fill="#c9a227" font-family="Arial,Helvetica,sans-serif" font-size="23" letter-spacing="5">NAIL EXTENSIONS</text>
+<text x="84" y="639" fill="#f7f2e8" font-family="Georgia,serif" font-size="37">Defined • Polished • Modern</text>
+<text x="84" y="819" fill="#f7f2e8" opacity=".55" font-family="Arial,Helvetica,sans-serif" font-size="13" letter-spacing="3">CUT &amp; CURLS • TOBA TEK SINGH</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1200" viewBox="0 0 1000 1200">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#11100f"/><stop offset="1" stop-color="#3b3022"/></linearGradient>
+<radialGradient id="glow" cx=".75" cy=".35" r=".7"><stop offset="0" stop-color="#d99a9f" stop-opacity=".28"/><stop offset="1" stop-color="#d99a9f" stop-opacity="0"/></radialGradient></defs>
+<rect width="100%" height="100%" fill="url(#bg)"/><rect width="100%" height="100%" fill="url(#glow)"/>
+<circle cx="120" cy="240" r="220" fill="none" stroke="#c9a227" stroke-opacity=".28" stroke-width="2"/>
+<circle cx="120" cy="240" r="170" fill="none" stroke="#c9a227" stroke-opacity=".16"/>
+<g opacity=".9"><ellipse cx="730" cy="636" rx="160" ry="336" fill="#d99a9f" opacity=".85"/>
+<ellipse cx="670" cy="504" rx="55" ry="168" fill="#f7f2e8" opacity=".9"/>
+<ellipse cx="790" cy="504" rx="55" ry="168" fill="#f7f2e8" opacity=".9"/>
+<ellipse cx="730" cy="408" rx="55" ry="168" fill="#f7f2e8" opacity=".9"/>
+<circle cx="730" cy="672" r="120" fill="none" stroke="#c9a227" stroke-width="3"/></g>
+<path d="M 70 948 H 480" stroke="#c9a227" stroke-width="2" opacity=".8"/>
+<text x="70" y="780" fill="#c9a227" font-family="Arial,Helvetica,sans-serif" font-size="26" letter-spacing="5">NAIL STUDIO</text>
+<text x="70" y="852" fill="#f7f2e8" font-family="Georgia,serif" font-size="42">Manicure • Nail Art</text>
+<text x="70" y="1092" fill="#f7f2e8" opacity=".55" font-family="Arial,Helvetica,sans-serif" font-size="15" letter-spacing="3">CUT &amp; CURLS • TOBA TEK SINGH</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#11100f"/><stop offset="1" stop-color="#3b3022"/></linearGradient>
+<radialGradient id="glow" cx=".75" cy=".35" r=".7"><stop offset="0" stop-color="#b88a77" stop-opacity=".28"/><stop offset="1" stop-color="#b88a77" stop-opacity="0"/></radialGradient></defs>
+<rect width="100%" height="100%" fill="url(#bg)"/><rect width="100%" height="100%" fill="url(#glow)"/>
+<circle cx="144" cy="180" r="198" fill="none" stroke="#c9a227" stroke-opacity=".28" stroke-width="2"/>
+<circle cx="144" cy="180" r="153" fill="none" stroke="#c9a227" stroke-opacity=".16"/>
+<g opacity=".9"><ellipse cx="876" cy="477" rx="192" ry="252" fill="#b88a77" opacity=".85"/>
+<ellipse cx="804" cy="378" rx="66" ry="126" fill="#f7f2e8" opacity=".9"/>
+<ellipse cx="948" cy="378" rx="66" ry="126" fill="#f7f2e8" opacity=".9"/>
+<ellipse cx="876" cy="306" rx="66" ry="126" fill="#f7f2e8" opacity=".9"/>
+<circle cx="876" cy="504" r="144" fill="none" stroke="#c9a227" stroke-width="3"/></g>
+<path d="M 84 711 H 576" stroke="#c9a227" stroke-width="2" opacity=".8"/>
+<text x="84" y="585" fill="#c9a227" font-family="Arial,Helvetica,sans-serif" font-size="23" letter-spacing="5">PEDICURE</text>
+<text x="84" y="639" fill="#f7f2e8" font-family="Georgia,serif" font-size="37">Relax • Refresh • Polish</text>
+<text x="84" y="819" fill="#f7f2e8" opacity=".55" font-family="Arial,Helvetica,sans-serif" font-size="13" letter-spacing="3">CUT &amp; CURLS • TOBA TEK SINGH</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#11100f"/><stop offset="1" stop-color="#3b3022"/></linearGradient>
+<radialGradient id="glow" cx=".75" cy=".35" r=".7"><stop offset="0" stop-color="#d5aa91" stop-opacity=".28"/><stop offset="1" stop-color="#d5aa91" stop-opacity="0"/></radialGradient></defs>
+<rect width="100%" height="100%" fill="url(#bg)"/><rect width="100%" height="100%" fill="url(#glow)"/>
+<circle cx="144" cy="180" r="198" fill="none" stroke="#c9a227" stroke-opacity=".28" stroke-width="2"/>
+<circle cx="144" cy="180" r="153" fill="none" stroke="#c9a227" stroke-opacity=".16"/>
+<g opacity=".92"><circle cx="864" cy="306" r="138" fill="#cda78d"/>
+<path d="M 696 792 Q 744 477 864 441 Q 1008 486 1080 792 Z" fill="#9b6d58"/>
+<path d="M 708 297 Q 816 90 1008 234 Q 972 351 876 378 Q 756 378 708 297 Z" fill="#181412"/>
+<path d="M 792 315 Q 840 333 888 315" fill="none" stroke="#6d4b3b" stroke-width="3" stroke-linecap="round"/></g>
+<path d="M 84 711 H 576" stroke="#c9a227" stroke-width="2" opacity=".8"/>
+<text x="84" y="585" fill="#c9a227" font-family="Arial,Helvetica,sans-serif" font-size="23" letter-spacing="5">SKIN TREATMENT</text>
+<text x="84" y="639" fill="#f7f2e8" font-family="Georgia,serif" font-size="37">Glow • Care • Renewal</text>
+<text x="84" y="819" fill="#f7f2e8" opacity=".55" font-family="Arial,Helvetica,sans-serif" font-size="13" letter-spacing="3">CUT &amp; CURLS • TOBA TEK SINGH</text>
+</svg>
